@@ -9,15 +9,35 @@
 </head>
 <body>
     <header>
-
+        ETCH-A-SKETCH
     </header>
 
     <main>
+        <div class="options">
+            <div class="color-options">
+                <button>Color: <input type="color"></button>
+                <button>Monochrome</button>
+                <button>Rainbow</button>
+                <button>Eraser</button>
+            </div>
+            <div class="grid-options">
+                <button>Clear</button>
+                <input type="range" min="1" max="100" value="4" class="slider" id="grid-size">
+            </div>
+            
+        </div>
         <div class="grid"></div>
     </main>
 
     <footer>
-
+        Copyright ©
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+        amayadf
+        <a href="https://github.com/amayadf" target="_blank">
+          <i class="fab fa-github"></i
+        ></a>
     </footer>
 </body>
 </html>
