@@ -77,6 +77,8 @@ colorButtons.forEach(colorButton => colorButton.addEventListener('click', change
 clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', (e) => {
     updateSize(e.target.value);
+    let gridPixels = grid.querySelectorAll('div');
+    gridPixels.forEach(gridPixel => gridPixel.remove());
     createGrid();
 });
 colorPicker.addEventListener('input', (e) => color = e.target.value);
