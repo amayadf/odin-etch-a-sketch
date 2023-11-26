@@ -78,14 +78,14 @@ clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', (e) => {
     updateSize(e.target.value);
     createGrid();
-})
+});
 colorPicker.addEventListener('input', (e) => color = e.target.value);
 
 //create grid with the default size when the site loads
 createGrid();
 
 //helper functions
-generateRandomRGB() {
+function generateRandomRGB() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
