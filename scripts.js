@@ -46,7 +46,7 @@ function changeMode(event) {
 function colorPixel() {
     switch(mode){
         case 'color':
-            this.style.backgroundColor = colorPicker.value;
+            this.style.backgroundColor = color;
             break;
         case 'rainbow':
             this.style.backgroundColor = generateRandomRGB();
