@@ -29,8 +29,8 @@ function createGrid(){
 
 //function to change mode
 function changeMode(event) {
-    //mode = event.target.id;
-    switch(event.target.id) {
+    mode = event.target.id;
+    /*switch(event.target.id) {
         case 'color':
             mode = 'color';
             break;
@@ -43,7 +43,7 @@ function changeMode(event) {
         case 'eraser':
             mode = 'eraser';
             break;
-    }
+    }*/
 }
 
 //function to color pixel
@@ -77,6 +77,7 @@ let colorButtons = document.querySelectorAll('.color-options button');
 let clearButton = document.querySelector('.grid-options button');
 let slider = document.querySelector('.slider');
 let colorPicker = document.querySelector('button input');
+
 
 colorButtons.forEach(colorButton => colorButton.addEventListener('click', changeMode));
 clearButton.addEventListener('click', clearGrid);

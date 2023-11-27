@@ -1,3 +1,10 @@
+:root{
+    --main-dark: #202020;
+    --main-light:#DEEDF0;
+    --secondary-light: #FFF5EB;
+    --terciary-light:#F4C7AB;
+}
+
 *,
 *::before,
 *::after {
@@ -13,20 +20,22 @@ html {
 }
 
 body {
+    background-color: var(--main-light);
+    color: var(--main-dark);
     font-size: 18px;
-    text-align: center;
-    background-color: #c7f4ff;
     margin: 0;
     height: 100vh;
+    text-align: center;
 }
 
 button, input {
+    background-color: var(--secondary-light);
     font-size: inherit;
     font-family: inherit;
-    border: none;
-    padding: 8px 32px;
     cursor: pointer;
     outline: none;
+    border: none;
+    padding: 8px 32px;
     width: 100%;
 }
 
@@ -76,6 +85,7 @@ main {
 .grid div {
     user-select: none;
 }
+
 
 /*footer*/
 footer {
