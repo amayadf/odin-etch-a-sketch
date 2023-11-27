@@ -1,8 +1,49 @@
+body {
+    font-size: 18px;
+    text-align: center;
+    background-color: #c7f4ff;
+}
+
+button {
+    font-size: 18px;
+    border-radius: 0;
+    padding: 8px 32px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+/*styling header*/
+
+
+/*styling main*/
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 32px;
+
+}
+
+/**styling options panel**/
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    
+}
+
+
+
+/***styling color options panel***/
+
+
+
+
+/***styling grid options panel***/
 .grid {
     width: 640px;
     height: 640px;
-    background-color: aqua;
+    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
 }
-
