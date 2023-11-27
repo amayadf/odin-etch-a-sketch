@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url(font-lexend/Lexend-VariableFont_wght.ttf);
+}
+
 :root{
     --main-dark: #202020;
     --main-light:#DEEDF0;
@@ -23,6 +28,7 @@ body {
     background-color: var(--main-light);
     color: var(--main-dark);
     font-size: 18px;
+    font-family: 'Lexend';
     margin: 0;
     height: 100vh;
     text-align: center;
