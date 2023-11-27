@@ -1,19 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    /*footer support*/
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     font-size: 18px;
     text-align: center;
     background-color: #c7f4ff;
+    margin: 0;
+    height: 100vh;
 }
 
-button {
-    font-size: 18px;
-    border-radius: 0;
+button, input {
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
     padding: 8px 32px;
     cursor: pointer;
-    min-width: 150px;
+    outline: none;
+    width: 100%;
 }
 
 /*styling header*/
-
+h1 {
+    margin: 0;
+}
 
 /*styling main*/
 main {
@@ -29,10 +49,13 @@ main {
     display: flex;
     flex-direction: column;
     gap: 64px;
-    
 }
 
-
+.options div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 /***styling color options panel***/
 
@@ -40,10 +63,25 @@ main {
 
 
 /***styling grid options panel***/
+
+
+/**styling grid**/
 .grid {
     width: 640px;
     height: 640px;
     background-color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+}
+
+.grid div {
+    user-select: none;
+}
+
+/*footer*/
+footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   text-align: center;
 }
