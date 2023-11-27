@@ -6,6 +6,10 @@ let size = DEFAULT_SIZE;
 let mode = DEFAULT_MODE;
 let color = DEFAULT_COLOR;
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 //function to create grid
 function updateSize(newSize) {
     size = newSize;
@@ -20,7 +24,10 @@ function createGrid(){
         grid.insertAdjacentElement('beforeend', gridPixel);
     }
     let gridPixels = document.querySelectorAll('.grid div');
-    gridPixels.forEach(gridPixel => gridPixel.addEventListener('click', colorPixel));
+    gridPixels.forEach(gridPixel => {
+        gridPixel.addEventListener('mouseover', colorPixel);
+        gridPixel.addEventListener('mousedown', colorPixel);
+    });
 }
 
 //function to change mode
@@ -43,7 +50,8 @@ function changeMode(event) {
 }
 
 //function to color pixel
-function colorPixel() {
+function colorPixel(e) {
+    if(e.type === 'mouseover' && !mouseDown) return
     switch(mode){
         case 'color':
             this.style.backgroundColor = color;
