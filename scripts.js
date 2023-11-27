@@ -19,15 +19,12 @@ function createGrid(){
     pixelAmount = size * size;
     for(let i = 0; i < pixelAmount; i++) {
         let gridPixel = document.createElement('div');
+        gridPixel.addEventListener('mouseover', colorPixel);
+        gridPixel.addEventListener('mousedown', colorPixel);
         grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
         grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
         grid.insertAdjacentElement('beforeend', gridPixel);
     }
-    let gridPixels = document.querySelectorAll('.grid div');
-    gridPixels.forEach(gridPixel => {
-        gridPixel.addEventListener('mouseover', colorPixel);
-        gridPixel.addEventListener('mousedown', colorPixel);
-    });
 }
 
 //function to change mode
