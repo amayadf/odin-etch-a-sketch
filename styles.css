@@ -34,17 +34,6 @@ body {
     text-align: center;
 }
 
-button, input {
-    background-color: var(--secondary-light);
-    font-size: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    padding: 8px 32px;
-    width: 100%;
-}
-
 /*styling header*/
 h1 {
     margin: 0;
@@ -60,6 +49,18 @@ main {
 }
 
 /**styling options panel**/
+
+button, input {
+    background-color: var(--secondary-light);
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 8px 32px;
+    width: 100%;
+}
+
 .options {
     display: flex;
     flex-direction: column;
@@ -69,13 +70,33 @@ main {
 .options div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
 }
 
+.active {
+    background-color: var(--terciary-light);
+    border-width: 1px;
+    border-color: var(--secondary-light);
+    color: var(--main-light)
+}
+
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
 /***styling color options panel***/
-
-
-
+.color-picker{
+    height:22px;
+    width: 22px;
+    padding: 0;
+}
 
 /***styling grid options panel***/
 
