@@ -76,9 +76,6 @@ button, input {
 
 .active {
     background-color: var(--terciary-light);
-    border-width: 1px;
-    border-color: var(--secondary-light);
-    color: var(--main-light)
 }
 
 button,

@@ -29,8 +29,7 @@ function createGrid(){
 
 //function to change mode
 function changeMode(event) {
-    mode = event.target.id;
-    /*switch(event.target.id) {
+    switch(event.target.id) {
         case 'color':
             mode = 'color';
             break;
@@ -43,7 +42,8 @@ function changeMode(event) {
         case 'eraser':
             mode = 'eraser';
             break;
-    }*/
+    }
+    updateButtons();
 }
 
 //function to color pixel
@@ -71,6 +71,11 @@ function clearGrid() {
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff')
 }
 
+function resetGrid() {
+    let gridPixels = grid.querySelectorAll('div');
+    gridPixels.forEach(gridPixel => gridPixel.remove());
+}
+
 //obtaining elements from the document
 let grid = document.querySelector('.grid');
 let colorButtons = document.querySelectorAll('.color-options button');
@@ -78,16 +83,19 @@ let clearButton = document.querySelector('.grid-options button');
 let slider = document.querySelector('.slider');
 let colorPicker = document.querySelector('.color-picker');
 
-
+//event listeners
 colorButtons.forEach(colorButton => colorButton.addEventListener('click', changeMode));
 clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', (e) => {
     updateSize(e.target.value);
-    let gridPixels = grid.querySelectorAll('div');
-    gridPixels.forEach(gridPixel => gridPixel.remove());
+    resetGrid();
     createGrid();
 });
-colorPicker.addEventListener('input', (e) => color = e.target.value);
+colorPicker.addEventListener('input', (e) => {
+    color = e.target.value;
+    mode = 'color';
+    updateButtons();
+});
 
 //create grid with the default size when the site loads
 createGrid();
@@ -98,4 +106,21 @@ function generateRandomRGB() {
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     return `rgb(${x}, ${y}, ${z})`;  
+}
+
+function updateButtons() {
+    colorButtons.forEach(colorButton => {
+        if(colorButton.id == mode) {
+            colorButton.classList.add('active');
+        }
+        else {
+            colorButton.classList.remove('active');
+        }
+    })
+    if(mode == 'color') {
+        colorPicker.classList.add('active');
+    }
+    else{
+        colorPicker.classList.remove('active');
+    }
 }
