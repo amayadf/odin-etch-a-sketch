@@ -6,9 +6,7 @@
 :root{
     --main-dark: #202020;
     --main-light:#DEEDF0;
-    --secondary-dark:#db5400;
     --secondary-light: #FFF5EB;
-    --terciary-dark:#05b5d8;
     --terciary-light:#F4C7AB;
 }
 
@@ -136,4 +134,14 @@ input[type='range']::-webkit-slider-thumb {
 /*footer*/
 footer {
     padding-bottom: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline var(--main-dark) 2px;
 }
