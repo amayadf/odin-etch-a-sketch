@@ -73,6 +73,7 @@ let grid = document.querySelector('.grid');
 let colorButtons = document.querySelectorAll('.color-options button');
 let clearButton = document.querySelector('.grid-options button');
 let slider = document.querySelector('.slider');
+let gridSize = document.querySelector('.grid-options label')
 let colorPicker = document.querySelector('.color-picker');
 
 //event listeners
@@ -83,6 +84,7 @@ colorButtons.forEach(colorButton => colorButton.addEventListener('click', (e) =>
 clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', (e) => {
     updateSize(e.target.value);
+    gridSize.textContent = `${size} x ${size}`;
     resetGrid();
     createGrid();
 });

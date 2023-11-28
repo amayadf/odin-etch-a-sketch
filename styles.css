@@ -66,14 +66,14 @@ button, input {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 86px;
 }
 
 .options div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
 }
 
 .active {
@@ -81,7 +81,8 @@ button, input {
 }
 
 button:hover,
-input[type='color']:hover {
+input[type='color']:hover,
+input[type='range']:hover {
   transform: scale(1.05);
 }
 
@@ -93,6 +94,10 @@ input[type='color']:hover {
 }
 
 /***styling grid options panel***/
+.grid-options div{
+    gap: 4px;
+}
+
 input[type='range'] {
     appearance: none;
     background: transparent;
