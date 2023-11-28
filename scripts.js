@@ -1,6 +1,6 @@
 const DEFAULT_SIZE = 4;
 const DEFAULT_MODE = 'color';
-const DEFAULT_COLOR = '#ffffff';
+const DEFAULT_COLOR =  '#0fc9ee';
 
 let size = DEFAULT_SIZE;
 let mode = DEFAULT_MODE;
@@ -10,9 +10,14 @@ let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
-//function to create grid
+//functions to update
 function updateSize(newSize) {
     size = newSize;
+}
+
+function updateColor(newColor) {
+    color = newColor;
+    mode = 'color';
 }
 
 function createGrid(){
@@ -29,21 +34,7 @@ function createGrid(){
 
 //function to change mode
 function changeMode(event) {
-    switch(event.target.id) {
-        case 'color':
-            mode = 'color';
-            break;
-        case 'rainbow':
-            mode = 'rainbow';
-            break;
-        case 'monochrome':
-            mode = 'monochrome';
-            break;
-        case 'eraser':
-            mode = 'eraser';
-            break;
-    }
-    updateButtons();
+    mode = event.target.id;
 }
 
 //function to color pixel
@@ -60,7 +51,7 @@ function colorPixel(e) {
             this.style.backgroundColor = '#000000';
             break;
         case 'eraser':
-            this.style.backgroundColor = DEFAULT_COLOR;
+            this.style.backgroundColor = '#ffffff';
             break;
     }
 }
@@ -76,6 +67,7 @@ function resetGrid() {
     gridPixels.forEach(gridPixel => gridPixel.remove());
 }
 
+
 //obtaining elements from the document
 let grid = document.querySelector('.grid');
 let colorButtons = document.querySelectorAll('.color-options button');
@@ -84,7 +76,10 @@ let slider = document.querySelector('.slider');
 let colorPicker = document.querySelector('.color-picker');
 
 //event listeners
-colorButtons.forEach(colorButton => colorButton.addEventListener('click', changeMode));
+colorButtons.forEach(colorButton => colorButton.addEventListener('click', (e) => {
+    changeMode(e);
+    updateButtons();
+}));
 clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', (e) => {
     updateSize(e.target.value);
@@ -92,8 +87,7 @@ slider.addEventListener('input', (e) => {
     createGrid();
 });
 colorPicker.addEventListener('input', (e) => {
-    color = e.target.value;
-    mode = 'color';
+    updateColor(e.target.value);
     updateButtons();
 });
 

@@ -15,9 +15,9 @@
     <main>
         <div class="options">
             <div class="color-options">
-                <button id="color">
+                <button id="color" class="active">
                     <label for="color-input">Color</label>
-                    <input type="color" class="color-picker" id="color-input" value="#ffffff">
+                    <input type="color" class="color-picker active" id="color-input" value="#0fc9ee">
                 </button>
                 <button id="monochrome">Monochrome</button>
                 <button id="rainbow">Rainbow</button>
@@ -25,7 +25,10 @@
             </div>
             <div class="grid-options">
                 <button>Clear</button>
-                <input type="range" min="1" max="40" value="4" class="slider" id="grid-size">
+                <div>
+                    <label for="grid-size"></label>
+                    <input type="range" min="1" max="40" value="4" class="slider" id="grid-size">
+                </div>
             </div>
             
         </div>
