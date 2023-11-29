@@ -16,13 +16,13 @@
     <main>
         <div class="options">
             <div class="color-options">
-                <button id="color" class="active">
-                    <label for="color-input">Color</label>
-                    <input type="color" class="color-picker active" id="color-input" value="#0fc9ee">
+                <button data-mode="color" class="active" id="color">
+                    <label for="color-input" data-mode="color">Color</label>
+                    <input type="color" data-mode="color" id="color-input" value="#0fc9ee">
                 </button>
-                <button id="monochrome">Monochrome</button>
-                <button id="rainbow">Rainbow</button>
-                <button id="eraser">Eraser</button>
+                <button data-mode="monochrome" id="monochrome">Monochrome</button>
+                <button data-mode="rainbow" id="rainbow">Rainbow</button>
+                <button data-mode="eraser" id="eraser">Eraser</button>
             </div>
             <div class="grid-options">
                 <button>Clear</button>

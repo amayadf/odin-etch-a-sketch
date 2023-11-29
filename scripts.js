@@ -9,7 +9,7 @@ let color = DEFAULT_COLOR;
 //html elements
 let grid = document.querySelector('.grid');
 let colorButtons = document.querySelectorAll('.color-options button');
-let colorPicker = document.querySelector('.color-picker');
+let colorPicker = document.querySelector('#color-input');
 let clearButton = document.querySelector('.grid-options button');
 let slider = document.querySelector('.slider');
 let gridSize = document.querySelector('.grid-options label')
@@ -43,9 +43,6 @@ function resetGrid() {
 
 //mode functions
 function updateButtons() {
-    if(mode == 'color') {
-        colorPicker.classList.toggle('active');
-    }
     (document.getElementById(mode)).classList.toggle('active');
 }
 
@@ -78,8 +75,11 @@ function generateRandomRGB() {
 //event handlers
 function handleColorButtonClick(e) {
     updateButtons();
-    mode = e.target.id;
+    mode = e.target.dataset.mode;
     updateButtons();
+    if(mode == 'color') {
+        colorPicker.click();
+    }
 }
 
 function handleSliderInput(e) {

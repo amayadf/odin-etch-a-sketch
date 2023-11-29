@@ -82,16 +82,21 @@ button, input {
     background-color: var(--terciary-light);
 }
 
+.hidden {
+    display: none;
+}
+
 button:hover,
 input:hover {
   transform: scale(1.05);
 }
 
 /***styling color options panel***/
-.color-picker{
+#color-input{
     height:22px;
     width: 22px;
     padding: 0;
+    background-color: inherit;
 }
 
 /***styling grid options panel***/
