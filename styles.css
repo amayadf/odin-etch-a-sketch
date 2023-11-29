@@ -83,8 +83,7 @@ button, input {
 }
 
 button:hover,
-input[type='color']:hover,
-input[type='range']:hover {
+input:hover {
   transform: scale(1.05);
 }
 
