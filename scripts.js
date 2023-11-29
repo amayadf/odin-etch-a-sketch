@@ -42,26 +42,11 @@ function resetGrid() {
 }
 
 //mode functions
-function changeMode(event) {
-    mode = event.target.id;
-    updateButtons();
-}
-
 function updateButtons() {
-    colorButtons.forEach(colorButton => {
-        if(colorButton.id == mode) {
-            colorButton.classList.add('active');
-        }
-        else {
-            colorButton.classList.remove('active');
-        }
-    })
     if(mode == 'color') {
-        colorPicker.classList.add('active');
+        colorPicker.classList.toggle('active');
     }
-    else{
-        colorPicker.classList.remove('active');
-    }
+    (document.getElementById(mode)).classList.toggle('active');
 }
 
 //color functions
@@ -91,6 +76,12 @@ function generateRandomRGB() {
 }
 
 //event handlers
+function handleColorButtonClick(e) {
+    updateButtons();
+    mode = e.target.id;
+    updateButtons();
+}
+
 function handleSliderInput(e) {
     size = e.target.value;
     gridSize.textContent = `${size} x ${size}`;
@@ -106,7 +97,7 @@ function handleColorPickerInput(e) {
 createGrid();
 
 //event listeners
-colorButtons.forEach(colorButton => colorButton.addEventListener('click', changeMode));
+colorButtons.forEach(colorButton => colorButton.addEventListener('click', handleColorButtonClick));
 clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', handleSliderInput);
 colorPicker.addEventListener('input', handleColorPickerInput);
