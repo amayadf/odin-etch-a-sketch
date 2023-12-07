@@ -12,11 +12,8 @@ let colorButtons = document.querySelectorAll('.color-options button');
 let colorPicker = document.querySelector('#color-input');
 let clearButton = document.querySelector('.grid-options button');
 let slider = document.querySelector('.slider');
-let gridSize = document.querySelector('.grid-options label')
-
-let mouseDown = false
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
+let gridSize = document.querySelector('.grid-options label');
+let mouseDown = false;
 
 //grid functions
 function createGrid(){
@@ -102,4 +99,5 @@ clearButton.addEventListener('click', clearGrid);
 slider.addEventListener('input', handleSliderInput);
 colorPicker.addEventListener('input', handleColorPickerInput);
 colorPicker.addEventListener('change', handleColorPickerInput);
-
+document.body.addEventListener('mousedown', () => mouseDown = true);
+document.body.addEventListener('mouseup', () => mouseDown = false);
